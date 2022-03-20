@@ -1,6 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import IconItem from '../components/IconItem';
+import SearchInput from './../components/SearchInput';
+import ProductCard from './../components/ProductCard';
+import RectBanner from './../components/RectBanner';
+import SquareImage from './../components/SquareImage';
+import MenuItem from './../components/MenuItem';
+
 
 const Home: NextPage = () => {
   return (
@@ -12,26 +19,70 @@ const Home: NextPage = () => {
       </Head>
 
       <main className='main' id='flex-1'>
+
+
         <div className='header-nav'>
           <div className='container' id='flex-2'>
+
             <div id='flex-3'>
-              <Image src={'/logo.svg'} width={36} height={36} alt={'logo'} />
-              <nav>
-              </nav>
-              <div className={'icon-menu'}>
+              <div id='logo_boxs'>
+                <Image src={'/logo.svg'} width={36} height={36} alt={'logo'} />
+                <MenuItem label='All Apparel Gadget' />
               </div>
+
+              <SearchInput />
+
+              <nav>
+                <IconItem icon='bag'/>
+                <IconItem icon='user'/>
+              </nav>
+
+              <div className={'icon-menu'}>
+                <IconItem icon='menu'/>
+                <IconItem icon='bag'/>
+                <IconItem icon='user'/>
+              </div>
+
             </div>
-            <div id='flex-4'>
-            </div>
+
           </div>
         </div>
 
+
+
+
+
         <div className='banner-gallery' id='flex-5'>
+          <div id='flex-4'>
+            <RectBanner size='large'/>
+          </div>
+
+          <div>
+            <SquareImage size='small'/>
+            <SquareImage size='small'/>
+            <SquareImage size='medium'/>
+            <SquareImage size='small'/>
+            <SquareImage size='small'/>
+          </div>
         </div>
+
         <h1 className='heading'>Products</h1>
+
         <div className='product-list' id='flex-6'>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
         </div>
+
         <div className='text-combo' id='flex-7'>
+
           <div className='paragraph-box' id='flex-8'>
             <h1 className='heading'>Best Seller</h1>
             <p className='paragraph'>
@@ -42,13 +93,24 @@ const Home: NextPage = () => {
             </p>
             <button>See More</button>
           </div>
+
+          <SquareImage size='large'/>
+
         </div>
+
         <div className='promotion-banner'>
+
           <div className={'promotion-banner-left'} id={'flex-9'}>
+              <RectBanner size='small'/>
+              <RectBanner size='small'/>
           </div>
+
           <div className={'promotion-banner-right'} id={'flex-10'}>
+              <RectBanner size='medium'/>
           </div>
+
         </div>
+        
       </main>
     </div>
   )
